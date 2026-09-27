@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PulseMind Decision Outcome",
+  "description": "Schema for measuring the outcome of a product decision.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decisionId",
+    "beforeComplaints",
+    "afterComplaints",
+    "improvementPercent",
+    "status"
+  ],
+  "properties": {
+    "decisionId": {
+      "type": "string",
+      "pattern": "^DEC-[0-9]{3}$"
+    },
+    "beforeComplaints": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "afterComplaints": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "improvementPercent": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "effective",
+        "ineffective",
+        "inconclusive"
+      ]
+    },
+    "measuredAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "sideEffects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "area",
+          "changePercent",
+          "direction"
+        ],
+        "properties": {
+          "area": {
+            "type": "string"
+          },
+          "changePercent": {
+            "type": "number"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "increase",
+              "decrease"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

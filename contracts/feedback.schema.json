@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PulseMind Feedback",
+  "description": "Feedback record contract from the PulseMind hackathon plan.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "source",
+    "date",
+    "rawText",
+    "productArea",
+    "sentiment",
+    "severity",
+    "theme"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "support",
+        "app_review",
+        "survey",
+        "social",
+        "community",
+        "interview",
+        "sales",
+        "store_review"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "rawText": {
+      "type": "string",
+      "minLength": 1
+    },
+    "productArea": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feature": {
+      "type": "string"
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": [
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "performance",
+        "usability",
+        "bug",
+        "feature_request",
+        "praise"
+      ]
+    },
+    "userSegment": {
+      "type": "string",
+      "enum": [
+        "Free",
+        "Pro",
+        "Business"
+      ]
+    },
+    "problem": {
+      "type": "string"
+    }
+  }
+}

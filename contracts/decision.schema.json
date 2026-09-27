@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PulseMind Decision",
+  "description": "Schema for product decisions recorded from customer feedback evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decisionId",
+    "problem",
+    "evidence",
+    "decision",
+    "date"
+  ],
+  "properties": {
+    "decisionId": {
+      "type": "string",
+      "pattern": "^DEC-[0-9]{3}$"
+    },
+    "problem": {
+      "type": "string",
+      "minLength": 5
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "affectedUsers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Free",
+          "Pro",
+          "Business"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "decision": {
+      "type": "string",
+      "minLength": 5
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expectedOutcome": {
+      "type": "string"
+    }
+  }
+}

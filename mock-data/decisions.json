@@ -1,0 +1,18 @@
+[
+  {
+    "decisionId": "DEC-017",
+    "problem": "Slow CSV exports",
+    "evidence": [
+      "31 customer complaints",
+      "MEM-00089",
+      "MEM-00091"
+    ],
+    "affectedUsers": [
+      "Pro",
+      "Business"
+    ],
+    "decision": "Optimize CSV generation",
+    "date": "2026-06-04",
+    "expectedOutcome": "50% reduction in complaints"
+  }
+]
